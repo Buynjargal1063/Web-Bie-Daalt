@@ -6,80 +6,116 @@
     <title>My Website</title>
     <!-- Bootstrap CSS -->
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+</head>
     <style>
         body {
-            font-family: roboto;
+            font-family: Roboto, Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
         }
+
         .top-header {
             background-color: #054A91;
             color: white;
             padding: 10px 20px;
+            top: 0;
+            width: 100%;
+            z-index: 1020;
+            position: fixed;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         }
+        header {
+    position: fixed;
+    top: 60px; 
+    width: 100%;
+    z-index: 1010; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
         .top-header .contact-info {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         .top-header .contact-info img {
             height: 50px;
         }
+
         .carousel-inner img {
             height: 100vh;
             object-fit: cover;
         }
+
         .carousel-caption {
-            background-color: #131B23(19, 27, 35, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
             padding: 1rem;
             border-radius: 10px;
-        }
-        footer {
-    background-color: #81A4CD;
-    color: #fff;
-    text-align: center;
-    padding: 0.5rem 0;
-    position: fixed;
-    bottom: -400px; /* Initially hide footer by moving it below the viewport */
-    left: 0;
-    width: 100%;
-    transition: bottom 0.5s ease-in-out; /* Smooth slide-in effect */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
-        footer.show-footer {
-    bottom: 0; /* When scrolled down, slide footer into view */
+        .carousel-caption h5 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .carousel-caption p {
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background-color: #81A4CD;
+            color: #fff;
+            text-align: center;
+            padding: 0.5rem 0;
+            margin-top: 2rem;
         }
 
         footer h5 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
         }
 
-        footer p, footer a {
-    font-size: 0.9rem;
-    line-height: 1.3;
+        footer p,
+        footer a {
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
 
         footer a:hover {
-    text-decoration: underline;
+            text-decoration: underline;
         }
 
         #projects {
-    padding: 3rem 0;
-    background-color: #f8f9fa;
+            padding: 3rem 0;
+            background-color: #f8f9fa;
         }
 
         #projects .card {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+           margin: 15px;
+           padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        #projects .card img {
+        width: 100%; 
+        height: 200px; 
+        object-fit: contain; 
+        background-color: #f0f0f0;
+        margin-bottom: 10px;
         }
 
+
         #projects .card:hover {
-    transform: translateY(-10px);
+            transform: translateY(-10px);
         }
+
         #warnings {
-            padding: 3rem 0;
+            margin: 15px auto;
+            padding: 15px;
+            border-radius: 5px;
             background-color: #fff8d2;
         }
 
@@ -95,6 +131,19 @@
             margin-bottom: 1.5rem;
         }
 
+        #order p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        #services-order {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .btn-custom {
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -103,7 +152,7 @@
         <div class="container-fluid">
             <div class="contact-info">
                 <div class="logo">
-                    <img src="../io/images.png" alt="Company Logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL4XRWEmvERLHgc1r6-HM2jcrAR1PPMnSuSA&s" alt="Company Logo">
                     <span style="font-size: 1.2rem; font-weight: bold; color: #f4f4f9;">Итгэл вакум цонх, хаалганы үйлдвэр</span>
                 </div>
                 <div class="details">
@@ -124,18 +173,12 @@
                     <ul class='navbar-nav'>
                         <li class='nav-item'>
                             <a class='nav-link active' aria-current='page' href='#'>Нүүр</a>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='#projects'>Хийсэн ажлууд</a>   
+                            <li class='nav-item'>
+                                <a class='nav-link' href='#services-order'>Таньд хүрэх үйлчилгээ болон Захиалга</a>                   
+                            </li>                    
                         </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' href='#about'>Бидний тухай</a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' href='#projects'>Хийсэн ажлууд</a>
-                        </li>                        
-                        <li class='nav-item'>
-                            <a class='nav-link' href='#services'>Таньд хүрэх үйлчилгээ</a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' href='#order'>Захиалга</a>
                         </li>
                     </ul>
                 </div>
@@ -147,27 +190,47 @@
     <div id='backgroundCarousel' class='carousel slide' data-bs-ride='carousel' data-bs-interval='5000'>
         <div class='carousel-inner'>
             <div class='carousel-item active'>
-                <img src='../io/window1.jpg' class='d-block w-100' alt='Slide 1'>
+                <img src='https://i.pinimg.com/736x/4e/ba/4c/4eba4c50d19fa2adbb2d3eb4c894d061.jpg' class='d-block w-100' alt='Slide 1'>
                 <div class='carousel-caption d-none d-md-block'>
                     <h5>Туршлагатай хамт олон</h5>
-                    <p>Сэтгэлээс гарах бүтээл.</p>
+                    <p>Сэтгэлээс гарах үр дүн.</p>
                 </div>
             </div>
             <div class='carousel-item'>
-                <img src='../io/window2.jpg' class='d-block w-100' alt='Slide 2'>
+                <img src='https://i.pinimg.com/736x/98/f1/dc/98f1dc84d39b4afe27d0663bfe5df090.jpg' class='d-block w-100' alt='Slide 2'>
                 <div class='carousel-caption d-none d-md-block'>
                     <h5>Шинэ технологи</h5>
                     <p>Цонхны шинэ загвар.</p>
                 </div>
             </div>
             <div class='carousel-item'>
-                <img src='../io/window3.jpg' class='d-block w-100' alt='Slide 3'>
+                <img src='https://i.pinimg.com/736x/0f/76/3b/0f763b7db94c1c9013fd4a8998703d5e.jpg' class='d-block w-100' alt='Slide 3'>
                 <div class='carousel-caption d-none d-md-block'>
                     <h5>Хамгийн чанартай бүтээгдэхүүн</h5>
                     <p>Бид чанарыг тэргүүнд тавьдаг.</p>
                 </div>
             </div>
         </div>
+        <!-- Үйлчилгээний дэлгэрэнгүй болон захиалгын хэсэг -->
+        <section id="services-order" class="mt-4">
+            <h2 class="text-center">Үйлчилгээний дэлгэрэнгүй ба Захиалга</h2>
+            <p class="text-center">
+                Бид таньд цонх болон хаалгыг хийх, солих мөн бүх засвар үйлчилгээг хийж өгнө. 
+                Мөн цонхны ялаа шумуулны торыг хийж үйлчилнэ.
+            </p>
+            <div class="row text-center mt-3">
+                <div class="col-md-6">
+                    <h3>Үйлчилгээний дэлгэрэнгүй</h3>
+                    <p>Бидний санал болгож буй бүх төрлийн үйлчилгээний мэдээлэл.</p>
+                    <a href="services.html" class="btn btn-primary btn-custom">Дэлгэрэнгүй</a>
+                </div>
+                <div class="col-md-6">
+                    <h3>Захиалгын дэлгэрэнгүй</h3>
+                    <p>Таны сонголтод нийцсэн захиалгын дэлгэрэнгүй мэдээлэл.</p>
+                    <a href="order.html" class="btn btn-success btn-custom">Дэлгэрэнгүй</a>
+                </div>
+            </div>
+        </section>
         <!-- Controls -->
         <button class='carousel-control-prev' type='button' data-bs-target='#backgroundCarousel' data-bs-slide='prev'>
             <span class='carousel-control-prev-icon' aria-hidden='true'></span>
@@ -178,49 +241,36 @@
             <span class='visually-hidden'>Дараах</span>
         </button>
     </div>
-
-    <main class='container mt-5'>
-        <h2 id='about'>Бидний тухай</h2>
-        <p>Манай байгууллага нь 2014 оноос хойш тасралтгүй 10 жил албан байгууллага болон иргэдэд үйлчилгээ үзүүлж буй туршлагатай байгууллага юм.</p>
-        
-        <h2 id='services'>Таньд хүрэх үйлчилгээ</h2>
-        <p>Бид таньд цонх болон хаалгыг хийх, солих мөн бүх засвар үйлчилгээг хийж өгнө. Мөн цонхны ялаа шумуулны торыг хийж өгч үйлчилж байна.</p>
-
-        <h2 id='order'>Захиалга</h2>
-        <p>2 давхар шилтэй 6.6мм зузаантай стандарт цонх мк үнэ: 180.000</p>
-        <p>2 давхар шилтэй 7.2мм зузаантай стандарт цонх мк үнэ: 240.000 </p>
-        <p>3 давхар шилтэй 7.2мм зузаантай стандарт цонх мк үнэ: 280.000</p>
-        <p>Хаалга 66 арамтай үнэ: 280.000 "хаалга суулгахгүй", суулгалт орсон мк үнэ: 300.000</p>
-        <p>Хаалга 72 арамтай үнэ: 355.000 "хаалга суулгахгүй", суулгалт орсон мк үнэ: 380.000</p>
-    </main>
-
     <section id="projects" class="container mt-5">
-    </div>
-        <h2 class="text-center mb-4">Хийсэн ажлууд</h2>
+        <h2 class="text-center mb-4">Бидний тухай болон Хийсэн ажлууд</h2>
+        <p class="text-center">
+            Манай байгууллага нь 2014 оноос хойш тасралтгүй 10 жил албан байгууллага болон иргэдэд үйлчилгээ үзүүлж буй туршлагатай байгууллага юм.
+            Хийсэн ажлууд маань бидний ажлын чанарыг харуулна.
+        </p>
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
-                    <img src="../io/buynt uhaa.jpg" class="card-img-top" alt="Project 1">
+                    <img src="https://content.ikon.mn/news/2015/8/28/47fbc8_ea34bccee8ecab38original_x974.jpg" class="card-img-top" alt="Project 1">
                     <div class="card-body">
-                        <h5 class="card-title">Буянт-Ухаа1,2</h5>
+                        <h5 class="card-title">"Буянт-Ухаа1,2"</h5>
                         <p class="card-text">Энэхүү төсөлд манай баг Хан-Уул дүүрэгт байрлах Буянт-Ухаа1,2 орон сууцны хэд хэдэн айлуудын цонх болон хаалгыг сольж суурилуулсан.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="../io/zugiin uur.jpg" class="card-img-top" alt="Project 2">
+                    <img src="https://cdn.greensoft.mn/uploads/site/266/photos/block/20170724130447_799bad5a3b514f096e69bbc4a7896cd9.jpg" class="card-img-top" alt="Project 2">
                     <div class="card-body">
-                        <h5 class="card-title">Зөгийн үүр</h5>
-                        <p class="card-text">Энэхүү төсөлд манай баг СБД-ийн 5-р хороонд байрлах "Зөгийн үүр" 12 давхар орон сууцны айлуудын цонхонд ялаа, шумуулны торыг хийж өгсөн</p>
+                        <h5 class="card-title">"Зөгийн үүр"</h5>
+                        <p class="card-text">Энэхүү төсөлд манай баг СБД-ийн 5-р хороонд байрлах "Зөгийн үүр" 12 давхар орон сууцны айлуудын цонхонд ялаа, шумуулны торыг хийж өгсөн.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="../io/zasvar.jpg" class="card-img-top" alt="Project 3">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjKwRJ5xYqI2rh0CpPa49MNin_fbg9sXRyhMODpm5eZWHdC-LKSzQGdndr0K_4VvqCaDfdK-kRbWp6hrJOYlVilHPSCJsCYE9Ya68XyeNxlt3reiAZMLquYJB_MREArXwvQXHvOkD5Xm5A/s1600/7a2fea5c66c6616f15270e8281381a58--upvc-windows-windows-and-doors.jpg" class="card-img-top" alt="Project 3">
                     <div class="card-body">
-                        <h5 class="card-title">Бараа бүтээгдэхүүний хүргэлт, засвар</h5>
+                        <h5 class="card-title">"Бараа бүтээгдэхүүний хүргэлт, засвар"</h5>
                         <p class="card-text">Манай хамт олон вакум цонх, хаалга сольж, суулгахын зэрэгцээ тухайн бараа бүтээгдэхүүнээ хүргэлтээр байнгын хүргэж ажилладаг.</p>
                     </div>
                 </div>
@@ -229,7 +279,7 @@
         <!-- Анхааруулга -->
     <div class="alert alert-warning" role="alert">
         <div class="d-flex align-items-center">
-            <img src="../io/zuvlumj.jpg" alt="Warning Icon" style="width: 30px; height: 30px; margin-right: 10px;">
+            <img src="https://scontent.fuln6-1.fna.fbcdn.net/v/t1.6435-9/40441511_900454770153387_8433851365884690432_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=LPlh7KkKPpEQ7kNvgHjv1ve&_nc_zt=23&_nc_ht=scontent.fuln6-1.fna&_nc_gid=AjJDX9ls2M58WFxqaCRyaJG&oh=00_AYBaZKc9t3hEk87devbvX7_DKUSCBL1762fJtcdQ0PO8Vw&oe=678C4A10" alt="Warning Icon" style="width: 30px; height: 30px; margin-right: 10px;">
             <span>Анхааруулга болон зөвлөмж: Цонхыг онгойлттой байх үед бариулыг эргүүлж, дарж болохгүй. Цонхны рам хавтасны хооронд эд зүйлс хавчуулан тавьж болохгүй. Порчикыг хүчтэй савж онгойлгон цохилт өгч болохгүй. Онгойсон цонхны хавтсан дээр хүнд зүйл тавьж болохгүй. Хүүхэд цонхыг том онгойлгохоос болгоомжилж хязгаарлагчтай, түлхүүртэй бариул тавьж өгөх хэрэгтэй. Хүчтэй салхитай үед цонхоо онгорхой орхиж болохгүй. Цонхыг нээх хаах үедээ гараа хавчуулахаас болгоомжлох хэрэгтэй.</span>
         </div>
     </section>    
@@ -237,71 +287,50 @@
     <footer>
         <div class="container">
             <div class="row">
-                <!-- Үндсэн цэс -->
-                <div class="col-md-3">
-                    <h5>Үндсэн цэс</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" style="color: #fff; text-decoration: none;">Нүүр</a></li>
-                        <li><a href="#" style="color: #fff; text-decoration: none;">Бидний тухай</a></li>
-                        <li><a href="#" style="color: #fff; text-decoration: none;">Таньд хүрэх үйлчилгээ</a></li>
-                        <li><a href="#" style="color: #fff; text-decoration: none;">Захиалга</a></li>
-                    </ul>
-                </div>
                 <!-- Холбоо барих -->
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <h5>Холбоо барих</h5>
                     <p>Улаанбаатар хот, Сүхбаатар дүүрэг, 105-р лангуу</p>
                     <p>+976-86155204</p>
                     <p>svkhbat2000@gmail.com</p>
                 </div>
+    
                 <!-- Имэйлээр бүртгүүлэх -->
-        <div class="col-md-3">
-    <h5>Имэйлээ бүртгүүлвэл мэдээ мэдээллийг түргэн шуурхай хүлээж авна шүү</h5>
-    <p>Сүүлийн мэдээллийг авах бол имэйлээ бүртгүүлнэ үү.</p>
-    <input type="email" id="emailInput" class="form-control" placeholder="Имэйл хаягаа оруулна уу">
-    <button class="btn btn-primary mt-2" onclick="registerEmail()">Бүртгүүлэх</button>
-    <p id="confirmationMessage" style="color: green; display: none; margin-top: 10px;">Бүртгэгдлээ!</p>
-</div>
-
-<!-- JavaScript хэсэг -->
-<script>
-    function registerEmail() {
-        var email = document.getElementById('emailInput').value;
-        if (email) {
-            // Имэйл байгаа бол "Бүртгэгдлээ" гэсэн бичиг гаргах
-            document.getElementById('confirmationMessage').style.display = 'block';
-        } else {
-            alert("Имэйл хаягаа оруулна уу!");
-        }
-    }
-
-    let footer = document.querySelector('footer');
-
-window.addEventListener('scroll', function () {
-    if (window.scrollY > 100) {  // Scroll down 100px or more
-        footer.classList.add('show-footer'); // Add the class to show the footer
-    } else {
-        footer.classList.remove('show-footer'); // Remove the class to hide the footer
-    }
-});
-
-
-</script>
-
+                <div class="col-md-4">
+                    <h5>Имэйлээ бүртгүүлвэл мэдээ мэдээллийг түргэн шуурхай хүлээж авна шүү</h5>
+                    <p>Сүүлийн мэдээллийг авах бол имэйлээ бүртгүүлнэ үү.</p>
+                    <input type="email" id="emailInput" class="form-control" placeholder="Имэйл хаягаа оруулна уу">
+                    <button class="btn btn-primary mt-2" onclick="registerEmail()">Бүртгүүлэх</button>
+                    <p id="confirmationMessage" style="color: green; display: none; margin-top: 10px;">Бүртгэгдлээ!</p>
+                </div>
+    
                 <!-- Сошиал холбоос -->
-        <div class="col-md-3">
-    <h5>Сошиал холбоос</h5>
-    <a href="https://www.facebook.com/profile.php?id=100066620806342&mibextid=ZbWKwL" target="_blank">
-        <img src="../io/images (1).png" alt="Facebook" style="width: 30px; height: 30px; margin-right: 10px;">
-        Facebook
-    </a>
-</div>
-
+                <div class="col-md-4">
+                    <h5>Сошиал холбоос</h5>
+                    <a href="https://www.facebook.com/profile.php?id=100066620806342&mibextid=ZbWKwL" target="_blank">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHHQ1tYDFw8In3ArE11fy-HfaGgjkh5fxd_w&s" alt="Facebook" style="width: 30px; height: 30px; margin-right: 10px;">
+                        Facebook
+                    </a>
+                </div>
+            </div>
             <div class="text-center mt-3">
                 <p>&copy; 2024 Итгэл вакум цонхны үйлдвэр. Бүх эрх хуулиар хамгаалагдсан.</p>
             </div>
         </div>
     </footer>
+    
+<!-- JavaScript хэсэг -->
+<script>
+    function registerEmail() {
+        var email = document.getElementById('emailInput').value;
+        if (email) {
+            document.getElementById('confirmationMessage').style.display = 'block';
+        } else {
+            alert("Имэйл хаягаа оруулна уу!");
+        }
+    }
+</script>
+
 
     <!-- Bootstrap JS Bundle -->
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>

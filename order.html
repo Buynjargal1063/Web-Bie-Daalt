@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Захиалга</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+        .header {
+            background-color: #054A91;
+        }
+        .order-form {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            background-color: #fff;
+        }
+        .pricing-table {
+            background-color: #f4f4f9;
+            color: white;
+        }
+        .message {
+            display: none;
+            text-align: center;
+            font-size: 1.2rem;
+            color: green;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-3">
+        <h1>Захиалгын хуудас</h1>
+    </header>
+
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Үнийн санал</h2>
+        <table class="table pricing-table">
+            <thead>
+                <tr>
+                    <th>Төрөл</th>
+                    <th>Үнэ (мк)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2 давхар шилтэй 6.6мм</td>
+                    <td>180,000₮</td>
+                </tr>
+                <tr>
+                    <td>2 давхар шилтэй 7.2мм</td>
+                    <td>240,000₮</td>
+                </tr>
+                <tr>
+                    <td>3 давхар шилтэй 7.2мм</td>
+                    <td>280,000₮</td>
+                </tr>
+                <tr>
+                    <td>Хаалга 'суулгахгүй' 6.6мм</td>
+                    <td>280,000₮</td>
+                </tr>
+                <tr>
+                    <td>Хаалга 'суулгалт орсон' 6.6мм</td>
+                    <td>300,000₮</td>
+                </tr>
+                <tr>
+                    <td>Хаалга 'суулгахгүй' 7.2мм</td>
+                    <td>355,000₮</td>
+                </tr>
+                <tr>
+                    <td>Хаалга 'суулгалт орсон' 7.2мм</td>
+                    <td>380,000₮</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="text-center mb-4">Захиалга өгөх</h2>
+        <div class="order-form mx-auto">
+            <form id="orderForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Нэр</label>
+                    <input type="text" class="form-control" id="name" placeholder="Таны нэр" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Утас</label>
+                    <input type="text" class="form-control" id="phone" placeholder="Таны утасны дугаар" required>
+                </div>
+                <div class="mb-3">
+                    <label for="details" class="form-label">Дэлгэрэнгүй мэдээлэл</label>
+                    <textarea class="form-control" id="details" rows="3" placeholder="Таны захиалгын дэлгэрэнгүй" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Захиалга өгөх</button>
+            </form>
+            <div id="successMessage" class="message">
+                Захиалга баталгаажлаа. Баярлалаа!
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        <p>&copy; 2024 Итгэл вакум цонх. Бүх эрх хуулиар хамгаалагдсан.</p>
+    </footer>
+    <a href="services.html" class="btn btn-secondary">Буцах</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById("orderForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            document.getElementById("successMessage").style.display = "block"; // Show success message
+            setTimeout(function() {
+                document.getElementById("successMessage").style.display = "none"; // Hide success message after 3 seconds
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
